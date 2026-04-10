@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  min-width: 220px;
+  text-align: center;
+}
+
+.sideTitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  min-width: 100px;
+}
+
+.controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.printButton {
+  min-width: 100px;
+  justify-content: flex-end;
+  display: inline-flex;
+}
+
+.printIcon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .sideTitle {
+    display: none;
+  }
+
+  .printButton {
+    min-width: auto;
+  }
+}

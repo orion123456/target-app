@@ -1,0 +1,70 @@
+.wrapper {
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 1200px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.headRow {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.headCell {
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: var(--surface);
+  border-bottom: 1px solid var(--line-soft);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.headCenter {
+  text-align: center;
+}
+
+.dayHead {
+  min-width: 56px;
+}
+
+.todayColumn {
+  background: #f3f7ff;
+}
+
+.stickyCol {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--surface);
+  min-width: 240px;
+}
+
+.emptyState {
+  padding: 28px;
+  text-align: center;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.footer {
+  padding: 14px 16px;
+}
+
+.addButton {
+  font-size: 14px;
+}

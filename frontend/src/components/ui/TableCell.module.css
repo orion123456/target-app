@@ -1,0 +1,10 @@
+.cell {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.subtle {
+  color: var(--text-secondary);
+}

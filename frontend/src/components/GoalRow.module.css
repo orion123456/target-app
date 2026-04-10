@@ -1,0 +1,106 @@
+.row {
+  transition: background-color 0.2s ease;
+}
+
+.row:nth-child(even) td {
+  background: var(--row-alt);
+}
+
+.row:nth-child(even) .stickyCol {
+  background: var(--row-alt);
+}
+
+.row:hover td {
+  background: var(--row-hover);
+}
+
+.cell {
+  padding: 6px 12px;
+}
+
+.stickyCol {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--surface);
+  min-width: 240px;
+}
+
+.dayCell {
+  min-width: 56px;
+}
+
+.todayColumn {
+  background: #f3f7ff;
+}
+
+.row td.todayColumn {
+  background: #f3f7ff;
+}
+
+.row:nth-child(even) td.todayColumn {
+  background: #f3f7ff;
+}
+
+.numericInput {
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.numericInput:focus {
+  border-color: var(--line-medium);
+}
+
+.planNeutral {
+  background: transparent;
+}
+
+.planSuccess {
+  background: var(--success-soft);
+}
+
+.planDanger {
+  background: var(--danger-soft);
+}
+
+.row td.planNeutral {
+  background: transparent;
+}
+
+.row td.planSuccess {
+  background: var(--success-soft);
+}
+
+.row td.planDanger {
+  background: var(--danger-soft);
+}
+
+.row:nth-child(even) td.planNeutral {
+  background: transparent;
+}
+
+.row:nth-child(even) td.planSuccess {
+  background: var(--success-soft);
+}
+
+.row:nth-child(even) td.planDanger {
+  background: var(--danger-soft);
+}
+
+.fact {
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.deleteCell {
+  text-align: center;
+}
+
+.deleteButton {
+  font-size: 18px;
+  width: 28px;
+  height: 28px;
+}

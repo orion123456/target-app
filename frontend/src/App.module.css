@@ -1,0 +1,32 @@
+.shell {
+  min-height: 100vh;
+  padding: 40px 24px 52px;
+}
+
+.container {
+  width: 100%;
+}
+
+.notice {
+  margin-bottom: 14px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.noticeError {
+  background: var(--danger-soft);
+  color: #7a2d2d;
+}
+
+.noticeInfo {
+  background: var(--hover-soft);
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .shell {
+    padding: 26px 12px 40px;
+  }
+}
