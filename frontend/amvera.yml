@@ -5,6 +5,5 @@ meta:
     version: 20
 
 build:
-  additionalCommands: npm run build
   artifacts:
     "dist/*": /
