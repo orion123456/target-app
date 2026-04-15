@@ -49,3 +49,10 @@
 .text:hover {
   color: var(--text-primary);
 }
+
+@media (max-width: 768px) {
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+}

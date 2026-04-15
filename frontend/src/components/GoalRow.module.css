@@ -104,3 +104,28 @@
   width: 28px;
   height: 28px;
 }
+
+@media (max-width: 768px) {
+  .cell {
+    padding: 6px 8px;
+  }
+
+  .stickyCol {
+    min-width: 180px;
+  }
+
+  .dayCell {
+    min-width: 44px;
+  }
+
+  .numericInput {
+    min-height: 34px;
+    border-radius: 7px;
+  }
+
+  .deleteButton {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+}

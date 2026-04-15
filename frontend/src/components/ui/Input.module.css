@@ -22,3 +22,10 @@
 .centered {
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .input {
+    min-height: 36px;
+    font-size: 16px;
+  }
+}

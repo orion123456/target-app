@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Check in grid icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f6f1" />
+      <stop offset="100%" stop-color="#eceae2" />
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#bg)" />
+  <rect x="14" y="14" width="36" height="36" rx="7" fill="#fffdfa" stroke="#cfcdc4" stroke-width="2" />
+  <path d="M26 14v36M38 14v36M14 26h36M14 38h36" stroke="#dddacf" stroke-width="1.6" />
+  <path d="M21 33.5l6 6 12-14" fill="none" stroke="#5a7b53" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

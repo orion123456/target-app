@@ -5,8 +5,15 @@
   overflow: hidden;
 }
 
+.mobileHint {
+  display: none;
+  margin: 0;
+}
+
 .tableScroll {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .table {
@@ -67,4 +74,47 @@
 
 .addButton {
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    border-radius: 12px;
+  }
+
+  .mobileHint {
+    display: block;
+    padding: 10px 12px 0;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  .table {
+    min-width: 940px;
+    font-size: 13px;
+  }
+
+  .headCell {
+    padding: 10px 8px;
+  }
+
+  .dayHead {
+    min-width: 44px;
+  }
+
+  .stickyCol {
+    min-width: 180px;
+  }
+
+  .emptyState {
+    padding: 20px 12px;
+  }
+
+  .footer {
+    padding: 12px;
+  }
+
+  .addButton {
+    width: 100%;
+    min-height: 42px;
+  }
 }

@@ -42,6 +42,9 @@ export const GoalsTable = ({
 
   return (
     <section className={`${styles.wrapper} print-table-wrap`}>
+      <p className={`${styles.mobileHint} print-hide`} aria-hidden="true">
+        Листайте таблицу по горизонтали, чтобы видеть все дни месяца.
+      </p>
       <div ref={scrollRef} className={`${styles.tableScroll} print-table-scroll`}>
         <table className={`${styles.table} print-table`}>
           <thead>

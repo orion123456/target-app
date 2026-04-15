@@ -43,15 +43,26 @@
 
 @media (max-width: 768px) {
   .header {
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 18px;
   }
 
   .sideTitle {
     display: none;
   }
 
+  .controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .title {
+    min-width: 0;
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
   .printButton {
     min-width: auto;
+    margin-left: auto;
   }
 }
