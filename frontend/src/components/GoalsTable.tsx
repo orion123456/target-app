@@ -23,6 +23,7 @@ export const GoalsTable = ({
 }: GoalsTableProps): JSX.Element => {
   const dayHeaders = Array.from({ length: daysInMonth }, (_, index) => index + 1);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const SCROLL_RIGHT_BIAS_PX = 20;
 
   useEffect(() => {
     if (todayDayIndex === null || !scrollRef.current) {
@@ -36,7 +37,11 @@ export const GoalsTable = ({
       return;
     }
 
-    const target = dayHeader.offsetLeft - container.clientWidth / 2 + dayHeader.clientWidth / 2;
+    const stickyColumn = container.querySelector<HTMLElement>('.sticky-col');
+    const stickyWidth = stickyColumn?.getBoundingClientRect().width ?? 0;
+    const visibleAreaWidth = Math.max(0, container.clientWidth - stickyWidth);
+    const visibleCenterX = stickyWidth + visibleAreaWidth / 2 + SCROLL_RIGHT_BIAS_PX;
+    const target = dayHeader.offsetLeft - visibleCenterX + dayHeader.clientWidth / 2;
     container.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
   }, [todayDayIndex, daysInMonth]);
 

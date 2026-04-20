@@ -47,15 +47,15 @@ const App = (): JSX.Element => {
   const [rows, setRows] = useState<GoalRowData[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [now, setNow] = useState<Date>(() => new Date());
 
   const saveTimersRef = useRef<Record<string, ReturnType<typeof setTimeout>>>({});
 
   const year = currentMonth.getFullYear();
   const month = currentMonth.getMonth() + 1;
   const daysInMonth = useMemo(() => getDaysInMonth(currentMonth), [currentMonth]);
-  const today = new Date();
-  const isCurrentDisplayedMonth = year === today.getFullYear() && month === today.getMonth() + 1;
-  const todayDayIndex = isCurrentDisplayedMonth ? Math.min(today.getDate(), daysInMonth) - 1 : null;
+  const isCurrentDisplayedMonth = year === now.getFullYear() && month === now.getMonth() + 1;
+  const todayDayIndex = isCurrentDisplayedMonth ? Math.min(now.getDate(), daysInMonth) - 1 : null;
 
   useEffect(() => {
     let isCancelled = false;
@@ -93,6 +93,29 @@ const App = (): JSX.Element => {
     return () => {
       Object.values(saveTimersRef.current).forEach((timerId) => clearTimeout(timerId));
       saveTimersRef.current = {};
+    };
+  }, []);
+
+  useEffect(() => {
+    let midnightTimerId: ReturnType<typeof setTimeout> | null = null;
+
+    const scheduleNextMidnightTick = (): void => {
+      const nextMidnight = new Date();
+      nextMidnight.setHours(24, 0, 0, 0);
+      const delay = Math.max(0, nextMidnight.getTime() - Date.now() + 50);
+
+      midnightTimerId = setTimeout(() => {
+        setNow(new Date());
+        scheduleNextMidnightTick();
+      }, delay);
+    };
+
+    scheduleNextMidnightTick();
+
+    return () => {
+      if (midnightTimerId) {
+        clearTimeout(midnightTimerId);
+      }
     };
   }, []);
 
