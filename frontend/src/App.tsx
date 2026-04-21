@@ -119,6 +119,47 @@ const App = (): JSX.Element => {
     };
   }, []);
 
+  useEffect(() => {
+    const refreshNowIfDayChanged = (): void => {
+      setNow((previous) => {
+        const next = new Date();
+        const isSameDay =
+          previous.getFullYear() === next.getFullYear() &&
+          previous.getMonth() === next.getMonth() &&
+          previous.getDate() === next.getDate();
+
+        return isSameDay ? previous : next;
+      });
+    };
+
+    const handleVisibilityChange = (): void => {
+      if (document.visibilityState === 'visible') {
+        refreshNowIfDayChanged();
+      }
+    };
+
+    const handleFocus = (): void => {
+      refreshNowIfDayChanged();
+    };
+
+    const handlePageShow = (): void => {
+      refreshNowIfDayChanged();
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleFocus);
+    window.addEventListener('pageshow', handlePageShow);
+
+    const intervalId = setInterval(refreshNowIfDayChanged, 60_000);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
+      window.removeEventListener('pageshow', handlePageShow);
+      clearInterval(intervalId);
+    };
+  }, []);
+
   const changeMonth = (offset: number): void => {
     setCurrentMonth((previous) => new Date(previous.getFullYear(), previous.getMonth() + offset, 1));
   };
